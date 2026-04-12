@@ -569,6 +569,65 @@ body {
   .budget-item-cost { grid-row: auto; grid-column: auto; }
 }
 
+/* ROUTE MAP */
+.route-map {
+  background: #fff;
+  padding: 4rem 2rem 3rem;
+  text-align: center;
+}
+
+.route-map-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.route-map h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: var(--forest);
+  margin-bottom: 0.5rem;
+}
+
+.route-map p {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+}
+
+.map-container {
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+
+.map-container iframe {
+  display: block;
+  width: 100%;
+  height: 500px;
+  border: 0;
+}
+
+.map-link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: var(--fern);
+  text-decoration: none;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.map-link:hover {
+  color: var(--forest);
+  text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+  .map-container iframe { height: 350px; }
+  .route-map { padding: 3rem 1.25rem 2rem; }
+}
+
 /* ANIMATIONS */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(20px); }
@@ -618,6 +677,22 @@ body {
     </div>
   </div>
   <div class="hero-scroll">Scroll to explore</div>
+</section>
+
+<section class="route-map">
+  <div class="route-map-inner">
+    <h2>The Loop</h2>
+    <p>San Francisco &rarr; Fort Bragg &rarr; Trinidad &rarr; Redding &rarr; Healdsburg &rarr; San Francisco</p>
+    <div class="map-container">
+      <iframe
+        src="https://www.google.com/maps/dir/San+Francisco,+CA/Fort+Bragg,+CA/Trinidad,+CA/Redding,+CA/Healdsburg,+CA/San+Francisco,+CA/"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+    <a href="https://www.google.com/maps/dir/San+Francisco,+CA/Fort+Bragg,+CA/Trinidad,+CA/Redding,+CA/Healdsburg,+CA/San+Francisco,+CA/" target="_blank" rel="noopener" class="map-link">Open full map in Google Maps &nearr;</a>
+  </div>
 </section>
 
 <div class="stops">
