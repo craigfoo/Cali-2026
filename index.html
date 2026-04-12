@@ -246,6 +246,20 @@ body {
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
+.activity-img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 0.75rem;
+  background: rgba(0,0,0,0.04);
+  display: none;
+}
+
+.activity-img.loaded {
+  display: block;
+}
+
 .stop:nth-child(odd) .activity-card { background: #fff; }
 
 .activity-card:hover {
@@ -385,6 +399,17 @@ body {
   font-weight: 600;
   font-size: 0.9rem;
   margin-bottom: 0.3rem;
+}
+
+.booking-card .item-name a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(245, 242, 237, 0.3);
+  transition: border-color 0.2s;
+}
+
+.booking-card .item-name a:hover {
+  border-bottom-color: var(--sand);
 }
 
 .booking-card .item-note {
@@ -717,37 +742,43 @@ body {
       </div>
       <p class="stop-desc">Get the city out of the way while everyone's fresh. Stay near Fisherman's Wharf, use transit and rideshare. Pick up the rental car at end of day 2.</p>
       <div class="activities-grid">
-        <div class="activity-card">
+        <div class="activity-card" data-wiki="Alcatraz_Island">
+          <img class="activity-img" alt="Alcatraz Island" loading="lazy">
           <div class="activity-icon">🏝</div>
           <div class="activity-name"><a href="https://www.google.com/maps/search/Alcatraz+Island+San+Francisco+CA" target="_blank" rel="noopener">Alcatraz Island</a></div>
           <div class="activity-desc">Ferry to the famous prison island. The audio tour is incredible &mdash; even the boys will be hooked.</div>
           <span class="activity-tag tag-book">Book now &mdash; sells out months ahead</span>
         </div>
-        <div class="activity-card">
+        <div class="activity-card" data-wiki="Golden_Gate_Bridge">
+          <img class="activity-img" alt="Golden Gate Bridge" loading="lazy">
           <div class="activity-icon">🌉</div>
           <div class="activity-name"><a href="https://www.google.com/maps/search/Golden+Gate+Bridge+San+Francisco+CA" target="_blank" rel="noopener">Golden Gate Bridge</a></div>
           <div class="activity-desc">Walk or bike across. Vista Point on the north side has the best photo ops of the city skyline.</div>
           <span class="activity-tag tag-must">Must do</span>
         </div>
-        <div class="activity-card">
+        <div class="activity-card" data-wiki="Pier_39">
+          <img class="activity-img" alt="Pier 39" loading="lazy">
           <div class="activity-icon">🦭</div>
           <div class="activity-name"><a href="https://www.google.com/maps/search/Pier+39+San+Francisco+CA" target="_blank" rel="noopener">Pier 39 &amp; Sea Lions</a></div>
           <div class="activity-desc">Watch the sea lions lounging on the docks. Grab clam chowder in a bread bowl at Boudin Bakery.</div>
           <span class="activity-tag tag-fun">Kids will love</span>
         </div>
-        <div class="activity-card">
+        <div class="activity-card" data-wiki="San_Francisco_cable_car_system">
+          <img class="activity-img" alt="Cable Car" loading="lazy">
           <div class="activity-icon">🚋</div>
           <div class="activity-name"><a href="https://www.google.com/maps/search/Powell+Hyde+Cable+Car+San+Francisco+CA" target="_blank" rel="noopener">Cable Car Ride</a></div>
           <div class="activity-desc">It's basically a roller coaster through the city streets. Ride the Powell-Hyde line for the best views.</div>
           <span class="activity-tag tag-fun">Kids will love</span>
         </div>
-        <div class="activity-card">
+        <div class="activity-card" data-wiki="Ghirardelli_Square">
+          <img class="activity-img" alt="Ghirardelli Square" loading="lazy">
           <div class="activity-icon">🍫</div>
           <div class="activity-name"><a href="https://www.google.com/maps/search/Ghirardelli+Square+San+Francisco+CA" target="_blank" rel="noopener">Ghirardelli Square</a></div>
           <div class="activity-desc">Free chocolate samples and massive sundaes. End the evening here for a sweet finish.</div>
           <span class="activity-tag tag-fun">Treat stop</span>
         </div>
-        <div class="activity-card">
+        <div class="activity-card" data-wiki="Chinatown,_San_Francisco">
+          <img class="activity-img" alt="Chinatown" loading="lazy">
           <div class="activity-icon">🏮</div>
           <div class="activity-name"><a href="https://www.google.com/maps/search/Chinatown+San+Francisco+CA" target="_blank" rel="noopener">Chinatown</a></div>
           <div class="activity-desc">The oldest Chinatown in North America. Walk through Dragon's Gate and explore the side alleys.</div>
@@ -779,19 +810,22 @@ body {
       </div>
       <p class="stop-desc">A tiny village on the cliffs with no chain stores. Break up the drive north and enjoy a coastal sunset before the redwoods begin.</p>
       <div class="activities-grid">
-        <div class="activity-card">
+        <div class="activity-card" data-wiki="Glass_Beach_(Fort_Bragg,_California)">
+          <img class="activity-img" alt="Glass Beach" loading="lazy">
           <div class="activity-icon">💎</div>
           <div class="activity-name"><a href="https://www.google.com/maps/search/Glass+Beach+Fort+Bragg+CA" target="_blank" rel="noopener">Glass Beach</a></div>
           <div class="activity-desc">A beach covered in colorful sea glass from decades of dumping, now polished smooth by the waves. The boys will love treasure hunting.</div>
           <span class="activity-tag tag-must">Must do</span>
         </div>
-        <div class="activity-card">
+        <div class="activity-card" data-wiki="Mendocino_Headlands_State_Park">
+          <img class="activity-img" alt="Mendocino Headlands" loading="lazy">
           <div class="activity-icon">🌊</div>
           <div class="activity-name"><a href="https://www.google.com/maps/search/Mendocino+Headlands+State+Park+CA" target="_blank" rel="noopener">Mendocino Headlands</a></div>
           <div class="activity-desc">Dramatic coastal bluffs with sea caves, blowholes, and easy cliff-top walking trails. Incredible at sunset.</div>
           <span class="activity-tag tag-hike">Easy walk</span>
         </div>
-        <div class="activity-card">
+        <div class="activity-card" data-wiki="Skunk_Train">
+          <img class="activity-img" alt="Skunk Train" loading="lazy">
           <div class="activity-icon">🚂</div>
           <div class="activity-name"><a href="https://www.google.com/maps/search/Skunk+Train+Willits+CA" target="_blank" rel="noopener">Skunk Train, Willits</a></div>
           <div class="activity-desc">Historic steam engine ride through redwood canyons. A magical introduction to the big trees. Stop here on the drive from SF.</div>
@@ -824,55 +858,64 @@ body {
       </div>
       <p class="stop-desc">One Airbnb, five nights, and the tallest trees on Earth in every direction. Every day is a different adventure &mdash; all within 30&ndash;60 minutes of your base. This is why you came.</p>
       <div class="activities-grid">
-        <div class="activity-card">
+        <div class="activity-card" data-wiki="Fern_Canyon">
+          <img class="activity-img" alt="Fern Canyon" loading="lazy">
           <div class="activity-icon">🌿</div>
           <div class="activity-name"><a href="https://www.google.com/maps/search/Fern+Canyon+Prairie+Creek+Redwoods+CA" target="_blank" rel="noopener">Fern Canyon</a></div>
           <div class="activity-desc">50-foot walls dripping with ferns. Filmed in Jurassic Park 2. You walk through a stream &mdash; bring waterproof shoes. Elk on nearby Gold Bluffs Beach.</div>
           <span class="activity-tag tag-must">Can't miss</span>
         </div>
-        <div class="activity-card">
+        <div class="activity-card" data-wiki="Lady_Bird_Johnson_Grove">
+          <img class="activity-img" alt="Lady Bird Johnson Grove" loading="lazy">
           <div class="activity-icon">🌲</div>
           <div class="activity-name"><a href="https://www.google.com/maps/search/Lady+Bird+Johnson+Grove+CA" target="_blank" rel="noopener">Lady Bird Johnson Grove</a></div>
           <div class="activity-desc">Easy 1.5-mile loop through ancient old-growth. One of the most peaceful walks you'll ever take. Perfect for kids.</div>
           <span class="activity-tag tag-hike">Easy &middot; 1.5 mi</span>
         </div>
-        <div class="activity-card">
+        <div class="activity-card" data-wiki="Trees_of_Mystery">
+          <img class="activity-img" alt="Trees of Mystery" loading="lazy">
           <div class="activity-icon">🚡</div>
           <div class="activity-name"><a href="https://www.google.com/maps/search/Trees+of+Mystery+Klamath+CA" target="_blank" rel="noopener">Trees of Mystery + SkyTrail</a></div>
           <div class="activity-desc">Giant Paul Bunyan statues, a gondola ride through the treetops, suspension bridges in the canopy. Boys will love every second.</div>
           <span class="activity-tag tag-fun">Kids will love</span>
         </div>
-        <div class="activity-card">
+        <div class="activity-card" data-wiki="Jedediah_Smith_Redwoods_State_Park">
+          <img class="activity-img" alt="Jedediah Smith Redwoods" loading="lazy">
           <div class="activity-icon">🏔</div>
           <div class="activity-name"><a href="https://www.google.com/maps/search/Jedediah+Smith+Redwoods+State+Park+CA" target="_blank" rel="noopener">Jedediah Smith Redwoods</a></div>
           <div class="activity-desc">The biggest trees in the park system. Drive Howland Hill Road through old-growth, hike to Stout Grove (340 ft tall, 22 ft diameter). Swim in the crystal-clear Smith River.</div>
           <span class="activity-tag tag-must">Must do</span>
         </div>
-        <div class="activity-card">
+        <div class="activity-card" data-wiki="Prairie_Creek_Redwoods_State_Park">
+          <img class="activity-img" alt="Prairie Creek Scenic Drive" loading="lazy">
           <div class="activity-icon">🚗</div>
           <div class="activity-name"><a href="https://www.google.com/maps/search/Newton+B+Drury+Scenic+Parkway+CA" target="_blank" rel="noopener">Prairie Creek Scenic Drive</a></div>
           <div class="activity-desc">Newton B. Drury Scenic Parkway &mdash; 10 miles through redwoods with elk herds, the Big Tree (1,500 years old), and pullouts everywhere.</div>
           <span class="activity-tag tag-must">Scenic drive</span>
         </div>
-        <div class="activity-card">
+        <div class="activity-card" data-wiki="Trinity_River_(California)">
+          <img class="activity-img" alt="Trinity River" loading="lazy">
           <div class="activity-icon">🛶</div>
           <div class="activity-name"><a href="https://www.google.com/maps/search/Six+Rivers+Rafting+Trinity+River+CA" target="_blank" rel="noopener">Trinity River Whitewater Rafting</a></div>
           <div class="activity-desc">Full-day Class II-III rapids with Six Rivers Rafting. Age 7+. Includes organic lunch, waterfall hike, and cliff jumping. 4.9 star rating.</div>
           <span class="activity-tag tag-book">Book in advance</span>
         </div>
-        <div class="activity-card">
+        <div class="activity-card" data-wiki="Gold_Bluffs_Beach">
+          <img class="activity-img" alt="Gold Bluffs Beach" loading="lazy">
           <div class="activity-icon">🏖</div>
           <div class="activity-name"><a href="https://www.google.com/maps/search/Gold+Bluffs+Beach+CA" target="_blank" rel="noopener">Gold Bluffs Beach</a></div>
           <div class="activity-desc">Wild beach where Roosevelt elk graze on the sand. Just down the road from Fern Canyon. Feels like another world.</div>
           <span class="activity-tag tag-must">Unique</span>
         </div>
-        <div class="activity-card">
+        <div class="activity-card" data-wiki="Trinidad,_California">
+          <img class="activity-img" alt="Trinidad Head" loading="lazy">
           <div class="activity-icon">🌅</div>
           <div class="activity-name"><a href="https://www.google.com/maps/search/Trinidad+Head+Trail+Trinidad+CA" target="_blank" rel="noopener">Trinidad Head Trail</a></div>
           <div class="activity-desc">Easy coastal loop right near your base with panoramic ocean views. Perfect sunset hike. Cute fishing village for dinner after.</div>
           <span class="activity-tag tag-hike">Easy &middot; sunset</span>
         </div>
-        <div class="activity-card">
+        <div class="activity-card" data-wiki="Battery_Point_Lighthouse">
+          <img class="activity-img" alt="Battery Point Lighthouse" loading="lazy">
           <div class="activity-icon">🏠</div>
           <div class="activity-name"><a href="https://www.google.com/maps/search/Battery+Point+Lighthouse+Crescent+City+CA" target="_blank" rel="noopener">Crescent City + Lighthouse</a></div>
           <div class="activity-desc">Battery Point Lighthouse is accessible only at low tide. Walk out to it, explore the museum, and enjoy the rugged northern coast.</div>
@@ -904,19 +947,22 @@ body {
       </div>
       <p class="stop-desc">A day of volcanoes, waterfalls, and glass bridges as you loop inland and head south toward wine country. Big scenery with minimal effort.</p>
       <div class="activities-grid">
-        <div class="activity-card">
+        <div class="activity-card" data-wiki="Mount_Shasta">
+          <img class="activity-img" alt="Mount Shasta" loading="lazy">
           <div class="activity-icon">🗻</div>
           <div class="activity-name"><a href="https://www.google.com/maps/search/Mount+Shasta+CA" target="_blank" rel="noopener">Mount Shasta</a></div>
           <div class="activity-desc">14,179-foot snow-capped volcano visible for 100 miles. Grab lunch in the charming little mountain town at its base.</div>
           <span class="activity-tag tag-must">Iconic view</span>
         </div>
-        <div class="activity-card">
+        <div class="activity-card" data-wiki="Burney_Falls">
+          <img class="activity-img" alt="Burney Falls" loading="lazy">
           <div class="activity-icon">💧</div>
           <div class="activity-name"><a href="https://www.google.com/maps/search/McArthur+Burney+Falls+Memorial+State+Park+CA" target="_blank" rel="noopener">Burney Falls</a></div>
           <div class="activity-desc">Called the "8th wonder of the world" by Teddy Roosevelt. 129-foot waterfall fed by underground springs. Easy 1-mile loop trail.</div>
           <span class="activity-tag tag-must">Must do</span>
         </div>
-        <div class="activity-card">
+        <div class="activity-card" data-wiki="Sundial_Bridge_at_Turtle_Bay">
+          <img class="activity-img" alt="Sundial Bridge" loading="lazy">
           <div class="activity-icon">🌁</div>
           <div class="activity-name"><a href="https://www.google.com/maps/search/Sundial+Bridge+Redding+CA" target="_blank" rel="noopener">Sundial Bridge, Redding</a></div>
           <div class="activity-desc">Stunning glass-and-steel pedestrian bridge designed by Santiago Calatrava. Turtle Bay Exploration Park nearby if the boys want more.</div>
@@ -948,19 +994,22 @@ body {
       </div>
       <p class="stop-desc">The perfect decompression after a week in the woods. Float the river, eat ice cream in a charming town square, and visit one last redwood grove before heading home.</p>
       <div class="activities-grid">
-        <div class="activity-card">
+        <div class="activity-card" data-wiki="Russian_River_(California)">
+          <img class="activity-img" alt="Russian River" loading="lazy">
           <div class="activity-icon">🛟</div>
           <div class="activity-name"><a href="https://www.google.com/maps/search/Russian+River+tubing+Guerneville+CA" target="_blank" rel="noopener">Russian River Lazy Tubing</a></div>
           <div class="activity-desc">Float from Steelhead Beach to Sunset Beach &mdash; about 4.5 hours of pure relaxation. Rent tubes on site. Warm water, mellow current.</div>
           <span class="activity-tag tag-water">Full day</span>
         </div>
-        <div class="activity-card">
+        <div class="activity-card" data-wiki="Armstrong_Redwoods_State_Natural_Reserve">
+          <img class="activity-img" alt="Armstrong Redwoods" loading="lazy">
           <div class="activity-icon">🌲</div>
           <div class="activity-name"><a href="https://www.google.com/maps/search/Armstrong+Redwoods+State+Natural+Reserve+CA" target="_blank" rel="noopener">Armstrong Redwoods</a></div>
           <div class="activity-desc">A small but stunning old-growth redwood grove right in wine country. Easy flat trails, perfect for families. One last dose of the giants.</div>
           <span class="activity-tag tag-hike">Easy walk</span>
         </div>
-        <div class="activity-card">
+        <div class="activity-card" data-wiki="Healdsburg,_California">
+          <img class="activity-img" alt="Healdsburg Plaza" loading="lazy">
           <div class="activity-icon">🍦</div>
           <div class="activity-name"><a href="https://www.google.com/maps/search/Healdsburg+Plaza+Healdsburg+CA" target="_blank" rel="noopener">Healdsburg Plaza</a></div>
           <div class="activity-desc">Charming town square with boutique shops, ice cream, wine tasting rooms for the adults, and a relaxed small-town vibe.</div>
@@ -1013,27 +1062,27 @@ body {
   <div class="booking-grid">
     <div class="booking-card">
       <div class="priority">Book immediately</div>
-      <div class="item-name">Alcatraz Ferry Tickets</div>
+      <div class="item-name"><a href="https://www.google.com/maps/search/Alcatraz+Island+San+Francisco+CA" target="_blank" rel="noopener">Alcatraz Ferry Tickets</a></div>
       <div class="item-note">Sells out 2&ndash;3 months ahead in summer. Morning tours are best.</div>
     </div>
     <div class="booking-card">
       <div class="priority">Book this week</div>
-      <div class="item-name">Skunk Train, Willits</div>
+      <div class="item-name"><a href="https://www.google.com/maps/search/Skunk+Train+Willits+CA" target="_blank" rel="noopener">Skunk Train, Willits</a></div>
       <div class="item-note">Only runs Wed/Fri/Sat/Sun. Jun 4 is a Thursday &mdash; do Skunk Train on Wed Jun 3 from SF as a day trip, or catch it Fri Jun 6 from Trinidad.</div>
     </div>
     <div class="booking-card">
       <div class="priority">Book this week</div>
-      <div class="item-name">Trinity River Rafting</div>
+      <div class="item-name"><a href="https://www.google.com/maps/search/Six+Rivers+Rafting+Trinity+River+CA" target="_blank" rel="noopener">Trinity River Rafting</a></div>
       <div class="item-note">Six Rivers Rafting. Full day, age 7+. Summer fills up fast. sixriversrafting.com</div>
     </div>
     <div class="booking-card">
       <div class="priority">Book this month</div>
-      <div class="item-name">Airbnb &mdash; Trinidad area</div>
+      <div class="item-name"><a href="https://www.google.com/maps/search/Trinidad+CA+vacation+rentals" target="_blank" rel="noopener">Airbnb &mdash; Trinidad area</a></div>
       <div class="item-note">5 nights. Look for a cabin or house near Trinidad or Arcata. Pool is a bonus.</div>
     </div>
     <div class="booking-card">
       <div class="priority">Book this month</div>
-      <div class="item-name">Airbnb &mdash; Healdsburg area</div>
+      <div class="item-name"><a href="https://www.google.com/maps/search/Healdsburg+CA+vacation+rentals" target="_blank" rel="noopener">Airbnb &mdash; Healdsburg area</a></div>
       <div class="item-note">3 nights. Guerneville or Healdsburg. Near Russian River for tubing access.</div>
     </div>
     <div class="booking-card" style="border-color: rgba(111, 160, 126, 0.4); background: rgba(111, 160, 126, 0.1);">
@@ -1149,6 +1198,22 @@ body {
   var bounds = L.latLngBounds(route);
   map.fitBounds(bounds.pad(0.1));
 })();
+
+// Load Wikipedia thumbnails for activity cards
+document.querySelectorAll('.activity-card[data-wiki]').forEach(function(card) {
+  var wiki = card.dataset.wiki;
+  var img = card.querySelector('.activity-img');
+  if (!img) return;
+  fetch('https://en.wikipedia.org/api/rest_v1/page/summary/' + encodeURIComponent(wiki))
+    .then(function(r) { return r.json(); })
+    .then(function(d) {
+      if (d.thumbnail && d.thumbnail.source) {
+        img.src = d.thumbnail.source.replace(/\/\d+px-/, '/400px-');
+        img.onload = function() { img.classList.add('loaded'); };
+      }
+    })
+    .catch(function() {});
+});
 </script>
 </body>
 </html>
