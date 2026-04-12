@@ -602,6 +602,46 @@ body {
   .budget-item-cost { grid-row: auto; grid-column: auto; }
 }
 
+.hero-countdown {
+  margin-top: 2.5rem;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.8s forwards;
+}
+
+.countdown-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(245, 242, 237, 0.4);
+  margin-bottom: 0.6rem;
+}
+
+.countdown-boxes {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.countdown-box {
+  text-align: center;
+}
+
+.countdown-box .cd-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--sand);
+  line-height: 1;
+}
+
+.countdown-box .cd-label {
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(245, 242, 237, 0.4);
+  margin-top: 0.2rem;
+}
+
 /* ROUTE MAP */
 .route-map {
   background: #fff;
@@ -708,6 +748,7 @@ body {
       <div class="hero-meta-item"><div class="num">~14h</div><div class="label">Driving</div></div>
       <div class="hero-meta-item"><div class="num">3h</div><div class="label">Max drive</div></div>
     </div>
+    <div class="hero-countdown" id="countdown"></div>
   </div>
   <div class="hero-scroll">Scroll to explore</div>
 </section>
@@ -1192,6 +1233,34 @@ body {
 
   var bounds = L.latLngBounds(route);
   map.fitBounds(bounds.pad(0.1));
+})();
+</script>
+<script>
+(function() {
+  var trip = new Date('2026-06-02T07:30:00-04:00');
+  var el = document.getElementById('countdown');
+  function update() {
+    var now = new Date();
+    var diff = trip - now;
+    if (diff <= 0) {
+      el.innerHTML = '<div class="countdown-label">The adventure has begun!</div>';
+      return;
+    }
+    var d = Math.floor(diff / 86400000);
+    var h = Math.floor((diff % 86400000) / 3600000);
+    var m = Math.floor((diff % 3600000) / 60000);
+    var s = Math.floor((diff % 60000) / 1000);
+    el.innerHTML =
+      '<div class="countdown-label">Countdown to takeoff</div>' +
+      '<div class="countdown-boxes">' +
+        '<div class="countdown-box"><div class="cd-num">' + d + '</div><div class="cd-label">Days</div></div>' +
+        '<div class="countdown-box"><div class="cd-num">' + h + '</div><div class="cd-label">Hours</div></div>' +
+        '<div class="countdown-box"><div class="cd-num">' + m + '</div><div class="cd-label">Min</div></div>' +
+        '<div class="countdown-box"><div class="cd-num">' + s + '</div><div class="cd-label">Sec</div></div>' +
+      '</div>';
+  }
+  update();
+  setInterval(update, 1000);
 })();
 </script>
 </body>
