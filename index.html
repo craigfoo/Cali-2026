@@ -1198,7 +1198,8 @@ body {
   var bounds = L.latLngBounds(route);
   map.fitBounds(bounds.pad(0.1));
 })();
-
+</script>
+<script>
 // Load Wikipedia thumbnails for activity cards
 document.querySelectorAll('.activity-card[data-wiki]').forEach(function(card) {
   var wiki = card.dataset.wiki;
@@ -1208,8 +1209,10 @@ document.querySelectorAll('.activity-card[data-wiki]').forEach(function(card) {
     .then(function(r) { return r.json(); })
     .then(function(d) {
       if (d.thumbnail && d.thumbnail.source) {
-        img.src = d.thumbnail.source.replace(/\/\d+px-/, '/400px-');
+        var src = d.thumbnail.source.replace(/\/\d+px-/, '/400px-');
+        img.src = src;
         img.onload = function() { img.classList.add('loaded'); };
+        img.onerror = function() { img.style.display = 'none'; };
       }
     })
     .catch(function() {});
