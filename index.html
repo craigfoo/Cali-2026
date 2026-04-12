@@ -1,0 +1,1034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>California Redwoods Loop — Family Road Trip</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --forest: #1a3c2a;
+  --forest-light: #2d5a3f;
+  --bark: #6b4226;
+  --bark-light: #8b5e3c;
+  --fern: #4a7c59;
+  --fern-light: #6fa07e;
+  --mist: #e8ece5;
+  --cream: #f5f2ed;
+  --sand: #d4c5a9;
+  --sky: #7ba7bc;
+  --sunset: #d4845a;
+  --redwood: #8b3a2a;
+  --text: #2c2c28;
+  --text-muted: #6b6b63;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--cream);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(175deg, #1a3c2a 0%, #0f2a1c 40%, #1c2e1f 70%, #2d4a35 100%);
+  overflow: hidden;
+  padding: 2rem;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: 
+    radial-gradient(ellipse 600px 400px at 20% 80%, rgba(74, 124, 89, 0.3) 0%, transparent 70%),
+    radial-gradient(ellipse 500px 300px at 80% 20%, rgba(139, 58, 42, 0.15) 0%, transparent 70%),
+    radial-gradient(ellipse 800px 600px at 50% 50%, rgba(0,0,0,0.2) 0%, transparent 60%);
+}
+
+.hero-content { position: relative; z-index: 1; max-width: 700px; }
+
+.hero-tag {
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--fern-light);
+  margin-bottom: 1.5rem;
+  font-weight: 500;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.2s forwards;
+}
+
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 700;
+  color: #f5f2ed;
+  line-height: 1.1;
+  margin-bottom: 1rem;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.4s forwards;
+}
+
+.hero h1 span {
+  display: block;
+  color: var(--fern-light);
+  font-style: italic;
+  font-weight: 400;
+  font-size: 0.6em;
+  margin-top: 0.3em;
+}
+
+.hero-meta {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 2rem;
+  opacity: 0;
+  animation: fadeUp 0.8s ease 0.6s forwards;
+}
+
+.hero-meta-item {
+  text-align: center;
+}
+
+.hero-meta-item .num {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: var(--sand);
+  font-weight: 600;
+}
+
+.hero-meta-item .label {
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(245, 242, 237, 0.5);
+  margin-top: 0.2rem;
+}
+
+.hero-scroll {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgba(245, 242, 237, 0.3);
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  animation: pulse 2s ease infinite;
+}
+
+.trees {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 200px;
+  opacity: 0.15;
+}
+
+.tree {
+  position: absolute;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to top, var(--fern-light), transparent);
+  border-radius: 2px 2px 0 0;
+}
+
+/* STOPS */
+.stops { padding: 0; }
+
+.stop {
+  position: relative;
+  padding: 5rem 2rem;
+  overflow: hidden;
+}
+
+.stop:nth-child(odd) { background: var(--cream); }
+.stop:nth-child(even) { background: #fff; }
+
+.stop-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.stop-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.stop-number {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+  background: var(--forest);
+}
+
+.stop.highlight .stop-number {
+  background: var(--redwood);
+  width: 56px;
+  height: 56px;
+  font-size: 1.4rem;
+}
+
+.stop-title-block { flex: 1; }
+
+.stop-name {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 600;
+  color: var(--forest);
+  line-height: 1.2;
+}
+
+.stop.highlight .stop-name { color: var(--redwood); }
+
+.stop-subtitle {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.3rem;
+  font-weight: 400;
+}
+
+.stop-badge {
+  display: inline-block;
+  background: var(--redwood);
+  color: #fff;
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  margin-top: 0.5rem;
+  font-weight: 500;
+}
+
+.stop-desc {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: 2rem;
+  max-width: 640px;
+}
+
+.activities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.activity-card {
+  background: var(--cream);
+  border-radius: 12px;
+  padding: 1.25rem;
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stop:nth-child(odd) .activity-card { background: #fff; }
+
+.activity-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+}
+
+.activity-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.6rem;
+}
+
+.activity-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+  color: var(--text);
+}
+
+.activity-desc {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.activity-tag {
+  display: inline-block;
+  margin-top: 0.5rem;
+  font-size: 0.65rem;
+  font-weight: 500;
+  padding: 0.15rem 0.5rem;
+  border-radius: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.tag-must { background: #f0e4d4; color: var(--bark); }
+.tag-hike { background: #dce8de; color: var(--forest); }
+.tag-water { background: #d4e8ef; color: #3a6b7c; }
+.tag-fun { background: #f5e0d4; color: var(--sunset); }
+.tag-book { background: #f7d4d0; color: var(--redwood); }
+
+/* DRIVE CONNECTOR */
+.drive-connector {
+  background: var(--forest);
+  color: rgba(245, 242, 237, 0.8);
+  padding: 1.2rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  font-size: 0.8rem;
+}
+
+.drive-connector svg {
+  flex-shrink: 0;
+  opacity: 0.5;
+}
+
+.drive-time {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  color: var(--sand);
+  font-weight: 600;
+}
+
+.drive-route {
+  font-size: 0.75rem;
+  color: rgba(245, 242, 237, 0.5);
+  margin-top: 0.15rem;
+}
+
+.drive-stops {
+  font-size: 0.78rem;
+  max-width: 400px;
+}
+
+/* BOOKING */
+.booking-section {
+  background: var(--forest);
+  padding: 4rem 2rem;
+  text-align: center;
+}
+
+.booking-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: var(--cream);
+  margin-bottom: 0.5rem;
+}
+
+.booking-section p {
+  color: rgba(245, 242, 237, 0.6);
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+}
+
+.booking-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.booking-card {
+  background: rgba(245, 242, 237, 0.08);
+  border: 1px solid rgba(245, 242, 237, 0.1);
+  border-radius: 12px;
+  padding: 1.25rem;
+  text-align: left;
+}
+
+.booking-card .priority {
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--sunset);
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.booking-card .item-name {
+  color: var(--cream);
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+.booking-card .item-note {
+  color: rgba(245, 242, 237, 0.45);
+  font-size: 0.75rem;
+  line-height: 1.5;
+}
+
+/* FOOTER */
+.footer {
+  background: #0f2a1c;
+  padding: 2rem;
+  text-align: center;
+  font-size: 0.75rem;
+  color: rgba(245, 242, 237, 0.25);
+}
+
+/* BUDGET */
+.budget-section {
+  background: var(--cream);
+  padding: 4rem 2rem;
+}
+
+.budget-section h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: var(--forest);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.budget-section > p {
+  text-align: center;
+  color: var(--text-muted);
+  margin-bottom: 2.5rem;
+  font-size: 0.9rem;
+}
+
+.budget-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.budget-bar-wrapper {
+  margin-bottom: 2rem;
+}
+
+.budget-bar-track {
+  position: relative;
+  height: 20px;
+  background: rgba(0,0,0,0.06);
+  border-radius: 10px;
+  overflow: visible;
+}
+
+.budget-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--fern), var(--fern-light));
+  border-radius: 10px;
+  transition: width 0.6s ease;
+}
+
+.budget-bar-marker {
+  position: absolute;
+  top: -2px;
+  height: 24px;
+  border-left: 2px dashed rgba(0,0,0,0.2);
+}
+
+.budget-bar-marker span {
+  position: absolute;
+  top: 28px;
+  left: -20px;
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.budget-bar-labels {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+  font-size: 0.8rem;
+}
+
+.budget-spent-label {
+  font-weight: 600;
+  color: var(--forest);
+}
+
+.budget-remaining-label {
+  color: var(--text-muted);
+}
+
+.budget-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+}
+
+.budget-item {
+  display: grid;
+  grid-template-columns: 90px 1fr auto;
+  gap: 0.8rem;
+  align-items: center;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  background: #fff;
+}
+
+.budget-item:last-child { border-bottom: none; }
+
+.budget-item.booked {
+  background: #f0f7f2;
+}
+
+.budget-item-status {
+  font-size: 0.65rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+}
+
+.budget-item.booked .budget-item-status {
+  color: var(--fern);
+}
+
+.budget-item-name {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.budget-item-detail {
+  grid-column: 2;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.budget-item-cost {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  text-align: right;
+  grid-row: 1 / 3;
+  grid-column: 3;
+}
+
+.budget-item.estimate .budget-item-cost {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+.budget-total {
+  background: var(--forest);
+  border-radius: 12px;
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.budget-total-label {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: rgba(245, 242, 237, 0.5);
+  margin-bottom: 0.3rem;
+}
+
+.budget-total-range {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--sand);
+}
+
+.budget-total-note {
+  font-size: 0.75rem;
+  color: rgba(245, 242, 237, 0.45);
+  margin-top: 0.3rem;
+}
+
+@media (max-width: 600px) {
+  .budget-item {
+    grid-template-columns: 1fr auto;
+    gap: 0.3rem;
+  }
+  .budget-item-status { grid-column: 1 / -1; }
+  .budget-item-detail { grid-column: 1 / -1; }
+  .budget-item-cost { grid-row: auto; grid-column: auto; }
+}
+
+/* ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+}
+
+@media (max-width: 600px) {
+  .hero-meta { gap: 1rem; }
+  .stop { padding: 3rem 1.25rem; }
+  .activities-grid { grid-template-columns: 1fr; }
+  .drive-connector { flex-direction: column; gap: 0.5rem; text-align: center; }
+  .booking-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="trees">
+    <div class="tree" style="left:8%;height:180px"></div>
+    <div class="tree" style="left:12%;height:140px"></div>
+    <div class="tree" style="left:15%;height:160px"></div>
+    <div class="tree" style="left:25%;height:120px"></div>
+    <div class="tree" style="left:35%;height:190px"></div>
+    <div class="tree" style="left:38%;height:150px"></div>
+    <div class="tree" style="left:55%;height:170px"></div>
+    <div class="tree" style="left:62%;height:130px"></div>
+    <div class="tree" style="left:65%;height:200px"></div>
+    <div class="tree" style="left:75%;height:145px"></div>
+    <div class="tree" style="left:82%;height:175px"></div>
+    <div class="tree" style="left:88%;height:155px"></div>
+    <div class="tree" style="left:92%;height:185px"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-tag">Tuesday, June 2 &ndash; Monday, June 15, 2026</div>
+    <h1>California Redwoods Loop <span>a family road trip</span></h1>
+    <div class="hero-meta">
+      <div class="hero-meta-item"><div class="num">14</div><div class="label">Days</div></div>
+      <div class="hero-meta-item"><div class="num">6</div><div class="label">Bases</div></div>
+      <div class="hero-meta-item"><div class="num">~14h</div><div class="label">Driving</div></div>
+      <div class="hero-meta-item"><div class="num">3h</div><div class="label">Max drive</div></div>
+    </div>
+  </div>
+  <div class="hero-scroll">Scroll to explore</div>
+</section>
+
+<div class="stops">
+
+  <!-- STOP 1: SAN FRANCISCO -->
+  <section class="stop">
+    <div class="stop-inner">
+      <div class="stop-header">
+        <div class="stop-number">1</div>
+        <div class="stop-title-block">
+          <div class="stop-name">San Francisco</div>
+          <div class="stop-subtitle">2 nights &middot; Tue Jun 2 &ndash; Wed Jun 3 &middot; No car needed</div>
+        </div>
+      </div>
+      <p class="stop-desc">Get the city out of the way while everyone's fresh. Stay near Fisherman's Wharf, use transit and rideshare. Pick up the rental car at end of day 2.</p>
+      <div class="activities-grid">
+        <div class="activity-card">
+          <div class="activity-icon">🏝</div>
+          <div class="activity-name">Alcatraz Island</div>
+          <div class="activity-desc">Ferry to the famous prison island. The audio tour is incredible &mdash; even the boys will be hooked.</div>
+          <span class="activity-tag tag-book">Book now &mdash; sells out months ahead</span>
+        </div>
+        <div class="activity-card">
+          <div class="activity-icon">🌉</div>
+          <div class="activity-name">Golden Gate Bridge</div>
+          <div class="activity-desc">Walk or bike across. Vista Point on the north side has the best photo ops of the city skyline.</div>
+          <span class="activity-tag tag-must">Must do</span>
+        </div>
+        <div class="activity-card">
+          <div class="activity-icon">🦭</div>
+          <div class="activity-name">Pier 39 &amp; Sea Lions</div>
+          <div class="activity-desc">Watch the sea lions lounging on the docks. Grab clam chowder in a bread bowl at Boudin Bakery.</div>
+          <span class="activity-tag tag-fun">Kids will love</span>
+        </div>
+        <div class="activity-card">
+          <div class="activity-icon">🚋</div>
+          <div class="activity-name">Cable Car Ride</div>
+          <div class="activity-desc">It's basically a roller coaster through the city streets. Ride the Powell-Hyde line for the best views.</div>
+          <span class="activity-tag tag-fun">Kids will love</span>
+        </div>
+        <div class="activity-card">
+          <div class="activity-icon">🍫</div>
+          <div class="activity-name">Ghirardelli Square</div>
+          <div class="activity-desc">Free chocolate samples and massive sundaes. End the evening here for a sweet finish.</div>
+          <span class="activity-tag tag-fun">Treat stop</span>
+        </div>
+        <div class="activity-card">
+          <div class="activity-icon">🏮</div>
+          <div class="activity-name">Chinatown</div>
+          <div class="activity-desc">The oldest Chinatown in North America. Walk through Dragon's Gate and explore the side alleys.</div>
+          <span class="activity-tag tag-must">Worth a walk</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DRIVE 1 -->
+  <div class="drive-connector">
+    <div>
+      <div class="drive-time">3 hours</div>
+      <div class="drive-route">Hwy 101 north</div>
+    </div>
+    <svg width="40" height="12" viewBox="0 0 40 12"><path d="M0 6h36m-4-4l4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+    <div class="drive-stops">Pick up rental car. Stop at Skunk Train in Willits (steam engine through redwoods &mdash; runs Wed/Fri/Sat/Sun, book ahead).</div>
+  </div>
+
+  <!-- STOP 2: FORT BRAGG -->
+  <section class="stop">
+    <div class="stop-inner">
+      <div class="stop-header">
+        <div class="stop-number">2</div>
+        <div class="stop-title-block">
+          <div class="stop-name">Fort Bragg &amp; Mendocino</div>
+          <div class="stop-subtitle">1 night &middot; Thu Jun 4 &middot; Coastal charm</div>
+        </div>
+      </div>
+      <p class="stop-desc">A tiny village on the cliffs with no chain stores. Break up the drive north and enjoy a coastal sunset before the redwoods begin.</p>
+      <div class="activities-grid">
+        <div class="activity-card">
+          <div class="activity-icon">💎</div>
+          <div class="activity-name">Glass Beach</div>
+          <div class="activity-desc">A beach covered in colorful sea glass from decades of dumping, now polished smooth by the waves. The boys will love treasure hunting.</div>
+          <span class="activity-tag tag-must">Must do</span>
+        </div>
+        <div class="activity-card">
+          <div class="activity-icon">🌊</div>
+          <div class="activity-name">Mendocino Headlands</div>
+          <div class="activity-desc">Dramatic coastal bluffs with sea caves, blowholes, and easy cliff-top walking trails. Incredible at sunset.</div>
+          <span class="activity-tag tag-hike">Easy walk</span>
+        </div>
+        <div class="activity-card">
+          <div class="activity-icon">🚂</div>
+          <div class="activity-name">Skunk Train, Willits</div>
+          <div class="activity-desc">Historic steam engine ride through redwood canyons. A magical introduction to the big trees. Stop here on the drive from SF.</div>
+          <span class="activity-tag tag-book">Book in advance</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DRIVE 2 -->
+  <div class="drive-connector">
+    <div>
+      <div class="drive-time">3 hours</div>
+      <div class="drive-route">Redwood Highway north</div>
+    </div>
+    <svg width="40" height="12" viewBox="0 0 40 12"><path d="M0 6h36m-4-4l4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+    <div class="drive-stops">Drive-Thru Tree in Leggett, Confusion Hill, then the 31-mile Avenue of the Giants through Humboldt Redwoods. Swim in the Eel River.</div>
+  </div>
+
+  <!-- STOP 3: REDWOODS -->
+  <section class="stop highlight">
+    <div class="stop-inner">
+      <div class="stop-header">
+        <div class="stop-number">3</div>
+        <div class="stop-title-block">
+          <div class="stop-name">Trinidad &amp; the Redwoods</div>
+          <div class="stop-subtitle">5 nights &middot; Fri Jun 5 &ndash; Tue Jun 9 &middot; Home base</div>
+          <div class="stop-badge">Core of the trip</div>
+        </div>
+      </div>
+      <p class="stop-desc">One Airbnb, five nights, and the tallest trees on Earth in every direction. Every day is a different adventure &mdash; all within 30&ndash;60 minutes of your base. This is why you came.</p>
+      <div class="activities-grid">
+        <div class="activity-card">
+          <div class="activity-icon">🌿</div>
+          <div class="activity-name">Fern Canyon</div>
+          <div class="activity-desc">50-foot walls dripping with ferns. Filmed in Jurassic Park 2. You walk through a stream &mdash; bring waterproof shoes. Elk on nearby Gold Bluffs Beach.</div>
+          <span class="activity-tag tag-must">Can't miss</span>
+        </div>
+        <div class="activity-card">
+          <div class="activity-icon">🌲</div>
+          <div class="activity-name">Lady Bird Johnson Grove</div>
+          <div class="activity-desc">Easy 1.5-mile loop through ancient old-growth. One of the most peaceful walks you'll ever take. Perfect for kids.</div>
+          <span class="activity-tag tag-hike">Easy &middot; 1.5 mi</span>
+        </div>
+        <div class="activity-card">
+          <div class="activity-icon">🚡</div>
+          <div class="activity-name">Trees of Mystery + SkyTrail</div>
+          <div class="activity-desc">Giant Paul Bunyan statues, a gondola ride through the treetops, suspension bridges in the canopy. Boys will love every second.</div>
+          <span class="activity-tag tag-fun">Kids will love</span>
+        </div>
+        <div class="activity-card">
+          <div class="activity-icon">🏔</div>
+          <div class="activity-name">Jedediah Smith Redwoods</div>
+          <div class="activity-desc">The biggest trees in the park system. Drive Howland Hill Road through old-growth, hike to Stout Grove (340 ft tall, 22 ft diameter). Swim in the crystal-clear Smith River.</div>
+          <span class="activity-tag tag-must">Must do</span>
+        </div>
+        <div class="activity-card">
+          <div class="activity-icon">🚗</div>
+          <div class="activity-name">Prairie Creek Scenic Drive</div>
+          <div class="activity-desc">Newton B. Drury Scenic Parkway &mdash; 10 miles through redwoods with elk herds, the Big Tree (1,500 years old), and pullouts everywhere.</div>
+          <span class="activity-tag tag-must">Scenic drive</span>
+        </div>
+        <div class="activity-card">
+          <div class="activity-icon">🛶</div>
+          <div class="activity-name">Trinity River Whitewater Rafting</div>
+          <div class="activity-desc">Full-day Class II-III rapids with Six Rivers Rafting. Age 7+. Includes organic lunch, waterfall hike, and cliff jumping. 4.9 star rating.</div>
+          <span class="activity-tag tag-book">Book in advance</span>
+        </div>
+        <div class="activity-card">
+          <div class="activity-icon">🏖</div>
+          <div class="activity-name">Gold Bluffs Beach</div>
+          <div class="activity-desc">Wild beach where Roosevelt elk graze on the sand. Just down the road from Fern Canyon. Feels like another world.</div>
+          <span class="activity-tag tag-must">Unique</span>
+        </div>
+        <div class="activity-card">
+          <div class="activity-icon">🌅</div>
+          <div class="activity-name">Trinidad Head Trail</div>
+          <div class="activity-desc">Easy coastal loop right near your base with panoramic ocean views. Perfect sunset hike. Cute fishing village for dinner after.</div>
+          <span class="activity-tag tag-hike">Easy &middot; sunset</span>
+        </div>
+        <div class="activity-card">
+          <div class="activity-icon">🏠</div>
+          <div class="activity-name">Crescent City + Lighthouse</div>
+          <div class="activity-desc">Battery Point Lighthouse is accessible only at low tide. Walk out to it, explore the museum, and enjoy the rugged northern coast.</div>
+          <span class="activity-tag tag-fun">Low tide only</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DRIVE 3 -->
+  <div class="drive-connector">
+    <div>
+      <div class="drive-time">3 hours</div>
+      <div class="drive-route">East &amp; south inland</div>
+    </div>
+    <svg width="40" height="12" viewBox="0 0 40 12"><path d="M0 6h36m-4-4l4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+    <div class="drive-stops">Leave the coast. Stunning drive through mountains to Mt. Shasta, then south to Burney Falls and Sundial Bridge.</div>
+  </div>
+
+  <!-- STOP 4: SHASTA -->
+  <section class="stop">
+    <div class="stop-inner">
+      <div class="stop-header">
+        <div class="stop-number">4</div>
+        <div class="stop-title-block">
+          <div class="stop-name">Redding &amp; Mt. Shasta</div>
+          <div class="stop-subtitle">1 night &middot; Wed Jun 10 &middot; Transition stop</div>
+        </div>
+      </div>
+      <p class="stop-desc">A day of volcanoes, waterfalls, and glass bridges as you loop inland and head south toward wine country. Big scenery with minimal effort.</p>
+      <div class="activities-grid">
+        <div class="activity-card">
+          <div class="activity-icon">🗻</div>
+          <div class="activity-name">Mount Shasta</div>
+          <div class="activity-desc">14,179-foot snow-capped volcano visible for 100 miles. Grab lunch in the charming little mountain town at its base.</div>
+          <span class="activity-tag tag-must">Iconic view</span>
+        </div>
+        <div class="activity-card">
+          <div class="activity-icon">💧</div>
+          <div class="activity-name">Burney Falls</div>
+          <div class="activity-desc">Called the "8th wonder of the world" by Teddy Roosevelt. 129-foot waterfall fed by underground springs. Easy 1-mile loop trail.</div>
+          <span class="activity-tag tag-must">Must do</span>
+        </div>
+        <div class="activity-card">
+          <div class="activity-icon">🌁</div>
+          <div class="activity-name">Sundial Bridge, Redding</div>
+          <div class="activity-desc">Stunning glass-and-steel pedestrian bridge designed by Santiago Calatrava. Turtle Bay Exploration Park nearby if the boys want more.</div>
+          <span class="activity-tag tag-fun">Quick stop</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DRIVE 4 -->
+  <div class="drive-connector">
+    <div>
+      <div class="drive-time">3 hours</div>
+      <div class="drive-route">South through Sacramento Valley</div>
+    </div>
+    <svg width="40" height="12" viewBox="0 0 40 12"><path d="M0 6h36m-4-4l4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+    <div class="drive-stops">Easy highway drive south through the valley to Sonoma wine country. Rolling green hills and vineyards.</div>
+  </div>
+
+  <!-- STOP 5: RUSSIAN RIVER -->
+  <section class="stop">
+    <div class="stop-inner">
+      <div class="stop-header">
+        <div class="stop-number">5</div>
+        <div class="stop-title-block">
+          <div class="stop-name">Healdsburg &amp; Russian River</div>
+          <div class="stop-subtitle">3 nights &middot; Thu Jun 11 &ndash; Sat Jun 13 &middot; Wind down</div>
+        </div>
+      </div>
+      <p class="stop-desc">The perfect decompression after a week in the woods. Float the river, eat ice cream in a charming town square, and visit one last redwood grove before heading home.</p>
+      <div class="activities-grid">
+        <div class="activity-card">
+          <div class="activity-icon">🛟</div>
+          <div class="activity-name">Russian River Lazy Tubing</div>
+          <div class="activity-desc">Float from Steelhead Beach to Sunset Beach &mdash; about 4.5 hours of pure relaxation. Rent tubes on site. Warm water, mellow current.</div>
+          <span class="activity-tag tag-water">Full day</span>
+        </div>
+        <div class="activity-card">
+          <div class="activity-icon">🌲</div>
+          <div class="activity-name">Armstrong Redwoods</div>
+          <div class="activity-desc">A small but stunning old-growth redwood grove right in wine country. Easy flat trails, perfect for families. One last dose of the giants.</div>
+          <span class="activity-tag tag-hike">Easy walk</span>
+        </div>
+        <div class="activity-card">
+          <div class="activity-icon">🍦</div>
+          <div class="activity-name">Healdsburg Plaza</div>
+          <div class="activity-desc">Charming town square with boutique shops, ice cream, wine tasting rooms for the adults, and a relaxed small-town vibe.</div>
+          <span class="activity-tag tag-fun">Relax</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- DRIVE TO SF -->
+  <div class="drive-connector">
+    <div>
+      <div class="drive-time">1.5 hours</div>
+      <div class="drive-route">South to San Francisco</div>
+    </div>
+    <svg width="40" height="12" viewBox="0 0 40 12"><path d="M0 6h36m-4-4l4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+    <div class="drive-stops">Easy drive back to the city. Last evening in SF &mdash; grab a nice dinner to celebrate the trip.</div>
+  </div>
+
+  <!-- STOP 6: SF RETURN -->
+  <section class="stop">
+    <div class="stop-inner">
+      <div class="stop-header">
+        <div class="stop-number">6</div>
+        <div class="stop-title-block">
+          <div class="stop-name">San Francisco</div>
+          <div class="stop-subtitle">1 night &middot; Sun Jun 14 &middot; Last night</div>
+        </div>
+      </div>
+      <p class="stop-desc">Stay near SFO or back in the city for one final evening. Wake up slow Monday morning, grab breakfast, and head to the airport. No rush &mdash; your flight isn't until 11:37 AM.</p>
+    </div>
+  </section>
+
+  <!-- FLY HOME -->
+  <div class="drive-connector">
+    <div>
+      <div class="drive-time">Mon Jun 15</div>
+      <div class="drive-route">Fly home</div>
+    </div>
+    <svg width="40" height="12" viewBox="0 0 40 12"><path d="M0 6h36m-4-4l4 4-4 4" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round"/></svg>
+    <div class="drive-stops">Drop rental car at SFO. Flight departs 11:37 AM, arrive Orlando 11:17 PM. Trip of a lifetime complete.</div>
+  </div>
+
+</div>
+
+<!-- BOOKING -->
+<section class="booking-section">
+  <h2>Book these now</h2>
+  <p>These sell out or need advance reservations &mdash; don't wait.</p>
+  <div class="booking-grid">
+    <div class="booking-card">
+      <div class="priority">Book immediately</div>
+      <div class="item-name">Alcatraz Ferry Tickets</div>
+      <div class="item-note">Sells out 2&ndash;3 months ahead in summer. Morning tours are best.</div>
+    </div>
+    <div class="booking-card">
+      <div class="priority">Book this week</div>
+      <div class="item-name">Skunk Train, Willits</div>
+      <div class="item-note">Only runs Wed/Fri/Sat/Sun. Jun 4 is a Thursday &mdash; do Skunk Train on Wed Jun 3 from SF as a day trip, or catch it Fri Jun 6 from Trinidad.</div>
+    </div>
+    <div class="booking-card">
+      <div class="priority">Book this week</div>
+      <div class="item-name">Trinity River Rafting</div>
+      <div class="item-note">Six Rivers Rafting. Full day, age 7+. Summer fills up fast. sixriversrafting.com</div>
+    </div>
+    <div class="booking-card">
+      <div class="priority">Book this month</div>
+      <div class="item-name">Airbnb &mdash; Trinidad area</div>
+      <div class="item-note">5 nights. Look for a cabin or house near Trinidad or Arcata. Pool is a bonus.</div>
+    </div>
+    <div class="booking-card">
+      <div class="priority">Book this month</div>
+      <div class="item-name">Airbnb &mdash; Healdsburg area</div>
+      <div class="item-note">3 nights. Guerneville or Healdsburg. Near Russian River for tubing access.</div>
+    </div>
+    <div class="booking-card" style="border-color: rgba(111, 160, 126, 0.4); background: rgba(111, 160, 126, 0.1);">
+      <div class="priority" style="color: var(--fern-light);">&#10003; Booked</div>
+      <div class="item-name">Flights MCO &harr; SFO</div>
+      <div class="item-note">American Airlines &middot; Confirmation: FCOYCS &middot; $3,265.60</div>
+    </div>
+  </div>
+</section>
+
+<!-- BUDGET -->
+<section class="budget-section">
+  <h2>Trip budget</h2>
+  <p>Tracking costs for a family of 4 &middot; Target: $6,500&ndash;$10,000</p>
+
+  <div class="budget-container">
+    <div class="budget-bar-wrapper">
+      <div class="budget-bar-track">
+        <div class="budget-bar-fill" style="width: 32.6%;"></div>
+        <div class="budget-bar-marker" style="left: 65%;"><span>$6,500</span></div>
+        <div class="budget-bar-marker" style="left: 100%;"><span>$10,000</span></div>
+      </div>
+      <div class="budget-bar-labels">
+        <span class="budget-spent-label">$3,265.60 spent</span>
+        <span class="budget-remaining-label">$3,234&ndash;$6,734 remaining</span>
+      </div>
+    </div>
+
+    <div class="budget-grid">
+      <div class="budget-item booked">
+        <div class="budget-item-status">&#10003; Booked</div>
+        <div class="budget-item-name">Flights (MCO &harr; SFO)</div>
+        <div class="budget-item-detail">American Airlines &middot; 4 passengers<br>Depart: Tue Jun 2, 7:30 AM &rarr; 1:13 PM<br>Return: Mon Jun 15, 11:37 AM &rarr; 11:17 PM<br>Confirmation: FCOYCS</div>
+        <div class="budget-item-cost">$3,265.60</div>
+      </div>
+      <div class="budget-item estimate">
+        <div class="budget-item-status">Estimate</div>
+        <div class="budget-item-name">Rental car (12 days)</div>
+        <div class="budget-item-detail">Pick up Wed Jun 3 PM, drop Mon Jun 15 AM at SFO</div>
+        <div class="budget-item-cost">$700&ndash;$1,200</div>
+      </div>
+      <div class="budget-item estimate">
+        <div class="budget-item-status">Estimate</div>
+        <div class="budget-item-name">Lodging (13 nights)</div>
+        <div class="budget-item-detail">SF hotel (2+1) &middot; Fort Bragg (1) &middot; Trinidad Airbnb (5) &middot; Shasta area (1) &middot; Healdsburg Airbnb (3)</div>
+        <div class="budget-item-cost">$2,200&ndash;$3,800</div>
+      </div>
+      <div class="budget-item estimate">
+        <div class="budget-item-status">Estimate</div>
+        <div class="budget-item-name">Gas</div>
+        <div class="budget-item-detail">~14 hours / ~800 miles of driving total</div>
+        <div class="budget-item-cost">$200&ndash;$300</div>
+      </div>
+      <div class="budget-item estimate">
+        <div class="budget-item-status">Estimate</div>
+        <div class="budget-item-name">Food &amp; dining</div>
+        <div class="budget-item-detail">14 days &middot; mix of groceries, casual, and a few nicer meals</div>
+        <div class="budget-item-cost">$1,200&ndash;$1,800</div>
+      </div>
+      <div class="budget-item estimate">
+        <div class="budget-item-status">Estimate</div>
+        <div class="budget-item-name">Activities &amp; tickets</div>
+        <div class="budget-item-detail">Alcatraz, Skunk Train, Trees of Mystery, rafting, tubing, parking fees</div>
+        <div class="budget-item-cost">$600&ndash;$900</div>
+      </div>
+    </div>
+
+    <div class="budget-total">
+      <div class="budget-total-label">Estimated total</div>
+      <div class="budget-total-range">$8,165 &ndash; $11,265</div>
+      <div class="budget-total-note">Booked so far: $3,265.60 &middot; Remaining estimates: $4,900&ndash;$8,000</div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  California Redwoods Loop &middot; Family of 4 &middot; Tue Jun 2 &ndash; Mon Jun 15, 2026 &middot; 14 days &middot; Budget: $6,500&ndash;$10,000
+</footer>
+
+</body>
+</html>
