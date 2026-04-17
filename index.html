@@ -248,6 +248,93 @@ body {
 .stop.highlight .stop-desc a { color: var(--redwood); border-bottom-color: rgba(139, 58, 42, 0.4); }
 .stop.highlight .stop-desc a:hover { color: var(--sunset); border-bottom-color: var(--sunset); }
 
+.stop-lodging {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: #fff;
+  border: 1px solid rgba(26, 60, 42, 0.12);
+  border-left: 3px solid var(--forest);
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-left-color 0.2s ease;
+  max-width: 640px;
+}
+
+.stop:nth-child(odd) .stop-lodging { background: var(--cream); }
+.stop:nth-child(even) .stop-lodging { background: #fff; }
+
+.stop-lodging:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  border-left-color: var(--fern);
+}
+
+.stop-lodging-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.stop-lodging-info { flex: 1; min-width: 0; }
+
+.stop-lodging-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 500;
+  margin-bottom: 0.15rem;
+}
+
+.stop-lodging-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--forest);
+  line-height: 1.3;
+}
+
+.stop-lodging-detail {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 0.15rem;
+}
+
+.stop-lodging-arrow {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  flex-shrink: 0;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.stop-lodging:hover .stop-lodging-arrow {
+  transform: translateX(3px);
+  color: var(--fern);
+}
+
+.stop.highlight .stop-lodging { border-left-color: var(--redwood); }
+.stop.highlight .stop-lodging-name { color: var(--redwood); }
+.stop.highlight .stop-lodging:hover { border-left-color: var(--sunset); }
+.stop.highlight .stop-lodging:hover .stop-lodging-arrow { color: var(--sunset); }
+
+.stop-lodging.tbd {
+  border-left-style: dashed;
+  border-left-color: var(--text-muted);
+  cursor: default;
+}
+
+.stop-lodging.tbd:hover {
+  transform: none;
+  box-shadow: none;
+  border-left-color: var(--text-muted);
+}
+
+.stop-lodging.tbd .stop-lodging-name { color: var(--text-muted); font-style: italic; }
+
 .activities-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -792,6 +879,15 @@ body {
           <div class="stop-subtitle">2 nights &middot; Tue Jun 2 &ndash; Wed Jun 3 &middot; No car needed</div>
         </div>
       </div>
+      <a class="stop-lodging" href="https://www.google.com/maps/search/Hotel+Caza+Fisherman+Wharf+San+Francisco" target="_blank" rel="noopener">
+        <span class="stop-lodging-icon">🏨</span>
+        <div class="stop-lodging-info">
+          <div class="stop-lodging-label">Staying at</div>
+          <div class="stop-lodging-name">Hotel Caza</div>
+          <div class="stop-lodging-detail">Fisherman's Wharf &middot; 2 nights &middot; Jun 2&ndash;4</div>
+        </div>
+        <span class="stop-lodging-arrow">&rarr;</span>
+      </a>
       <p class="stop-desc">Get the city out of the way while everyone's fresh. Staying at <strong><a href="https://www.google.com/maps/search/Hotel+Caza+Fisherman+Wharf+San+Francisco" target="_blank" rel="noopener">Hotel Caza</a></strong> in Fisherman's Wharf (1300 Columbus Ave) &mdash; walkable to Pier 39, Ghirardelli Square, and the Alcatraz ferry. Use transit and rideshare for Chinatown and cable cars. Pick up the rental car at end of day 2.</p>
       <div class="activities-grid">
         <div class="activity-card" data-wiki="Alcatraz_Island">
@@ -860,6 +956,15 @@ body {
           <div class="stop-subtitle">1 night &middot; Thu Jun 4 &middot; Coastal charm</div>
         </div>
       </div>
+      <a class="stop-lodging" href="https://www.google.com/maps/search/Surf+and+Sand+Lodge+Fort+Bragg+CA" target="_blank" rel="noopener">
+        <span class="stop-lodging-icon">🏨</span>
+        <div class="stop-lodging-info">
+          <div class="stop-lodging-label">Staying at</div>
+          <div class="stop-lodging-name">Surf &amp; Sand Lodge</div>
+          <div class="stop-lodging-detail">Ocean view room &middot; 1 night &middot; Jun 4&ndash;5</div>
+        </div>
+        <span class="stop-lodging-arrow">&rarr;</span>
+      </a>
       <p class="stop-desc">A tiny village on the cliffs with no chain stores. Staying at <strong><a href="https://www.google.com/maps/search/Surf+and+Sand+Lodge+Fort+Bragg+CA" target="_blank" rel="noopener">Surf and Sand Lodge</a></strong> &mdash; ocean view room with two queen beds. Break up the drive north and enjoy a coastal sunset before the redwoods begin.</p>
       <div class="activities-grid">
         <div class="activity-card" data-wiki="Glass_Beach_(Fort_Bragg,_California)">
@@ -908,6 +1013,15 @@ body {
           <div class="stop-badge">Core of the trip</div>
         </div>
       </div>
+      <a class="stop-lodging" href="https://www.airbnb.com/rooms/1579783817405321605" target="_blank" rel="noopener">
+        <span class="stop-lodging-icon">🏠</span>
+        <div class="stop-lodging-info">
+          <div class="stop-lodging-label">Home base</div>
+          <div class="stop-lodging-name">Eureka Airbnb</div>
+          <div class="stop-lodging-detail">5 nights &middot; Jun 5&ndash;10 &middot; Near the redwoods</div>
+        </div>
+        <span class="stop-lodging-arrow">&rarr;</span>
+      </a>
       <p class="stop-desc">One <strong><a href="https://www.airbnb.com/rooms/1579783817405321605" target="_blank" rel="noopener">Airbnb</a></strong>, five nights, and the tallest trees on Earth in every direction. Every day is a different adventure &mdash; all within 30&ndash;60 minutes of your base in Eureka. This is why you came.</p>
       <div class="activities-grid">
         <div class="activity-card" data-wiki="Fern_Canyon">
@@ -997,6 +1111,15 @@ body {
           <div class="stop-subtitle">1 night &middot; Wed Jun 10 &middot; Transition stop</div>
         </div>
       </div>
+      <a class="stop-lodging" href="https://www.google.com/maps/search/Americana+Modern+Hotel+Redding+CA" target="_blank" rel="noopener">
+        <span class="stop-lodging-icon">🏨</span>
+        <div class="stop-lodging-info">
+          <div class="stop-lodging-label">Staying at</div>
+          <div class="stop-lodging-name">Americana Modern Hotel</div>
+          <div class="stop-lodging-detail">King Queen Queen Suite &middot; 1 night &middot; Jun 10&ndash;11</div>
+        </div>
+        <span class="stop-lodging-arrow">&rarr;</span>
+      </a>
       <p class="stop-desc">A day of volcanoes, waterfalls, and glass bridges as you loop inland and head south toward wine country. Staying at <strong><a href="https://www.google.com/maps/search/Americana+Modern+Hotel+Redding+CA" target="_blank" rel="noopener">Americana Modern Hotel</a></strong> in Redding (1241 Market St) &mdash; King Queen Queen Suite fits the whole crew. Big scenery with minimal effort.</p>
       <div class="activities-grid">
         <div class="activity-card" data-wiki="Mount_Shasta">
@@ -1044,6 +1167,15 @@ body {
           <div class="stop-subtitle">3 nights &middot; Thu Jun 11 &ndash; Sat Jun 13 &middot; Wind down</div>
         </div>
       </div>
+      <a class="stop-lodging" href="https://www.airbnb.com/rooms/19220864" target="_blank" rel="noopener">
+        <span class="stop-lodging-icon">🏠</span>
+        <div class="stop-lodging-info">
+          <div class="stop-lodging-label">Staying at</div>
+          <div class="stop-lodging-name">Home with Hot Tub &amp; Vineyard Views</div>
+          <div class="stop-lodging-detail">Healdsburg &middot; 3 nights &middot; Jun 11&ndash;14</div>
+        </div>
+        <span class="stop-lodging-arrow">&rarr;</span>
+      </a>
       <p class="stop-desc">The perfect decompression after a week in the woods. Staying at a <strong><a href="https://www.airbnb.com/rooms/19220864" target="_blank" rel="noopener">Home in Healdsburg</a></strong> with a hot tub and vineyard views &mdash; the reward for all the driving. Float the river, eat ice cream in the plaza, and visit one last redwood grove before heading home.</p>
       <div class="activities-grid">
         <div class="activity-card" data-wiki="Russian_River_(California)">
@@ -1089,6 +1221,14 @@ body {
         <div class="stop-title-block">
           <div class="stop-name">San Francisco</div>
           <div class="stop-subtitle">1 night &middot; Sun Jun 14 &middot; Last night</div>
+        </div>
+      </div>
+      <div class="stop-lodging tbd">
+        <span class="stop-lodging-icon">🏨</span>
+        <div class="stop-lodging-info">
+          <div class="stop-lodging-label">Staying at</div>
+          <div class="stop-lodging-name">TBD &mdash; near SFO</div>
+          <div class="stop-lodging-detail">1 night &middot; Jun 14&ndash;15</div>
         </div>
       </div>
       <p class="stop-desc">Stay near SFO or back in the city for one final evening. Wake up slow Monday morning, grab breakfast, and head to the airport. No rush &mdash; your flight isn't until 11:37 AM.</p>
