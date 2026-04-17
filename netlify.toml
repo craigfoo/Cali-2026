@@ -1,7 +1,24 @@
 [build]
   publish = "."
 
+# HTML: short cache so edits go live quickly
 [[headers]]
-  for = "/*"
+  for = "/*.html"
   [headers.values]
-    Cache-Control = "public, max-age=300"
+    Cache-Control = "public, max-age=300, must-revalidate"
+
+# Static images: long immutable cache (these filenames don't change)
+[[headers]]
+  for = "/*.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.jfif"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.webp"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
