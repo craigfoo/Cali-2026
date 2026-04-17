@@ -277,6 +277,27 @@ body {
   font-size: 1.5rem;
   line-height: 1;
   flex-shrink: 0;
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(26, 60, 42, 0.06);
+  border-radius: 8px;
+}
+
+.stop-lodging-img {
+  width: 96px;
+  height: 72px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+  background: rgba(0,0,0,0.05);
+}
+
+@media (max-width: 600px) {
+  .stop-lodging-img { width: 80px; height: 60px; }
+  .stop-lodging-icon { width: 56px; height: 56px; font-size: 1.3rem; }
 }
 
 .stop-lodging-info { flex: 1; min-width: 0; }
@@ -966,7 +987,7 @@ body {
         </div>
       </div>
       <a class="stop-lodging" href="https://www.google.com/maps/search/Hotel+Caza+Fisherman+Wharf+San+Francisco" target="_blank" rel="noopener">
-        <span class="stop-lodging-icon">🏨</span>
+        <img class="stop-lodging-img" src="https://lh3.googleusercontent.com/p/AF1QipOoViFgF2VHsxTMpTZOfO-ZtDZ0dR_clOCYj9as=s1360-w1360-h1020-rw" alt="Hotel Caza" loading="lazy" onerror="this.outerHTML='&lt;span class=&quot;stop-lodging-icon&quot;&gt;🏨&lt;/span&gt;'">
         <div class="stop-lodging-info">
           <div class="stop-lodging-label">Staying at</div>
           <div class="stop-lodging-name">Hotel Caza</div>
