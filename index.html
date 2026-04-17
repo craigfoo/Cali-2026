@@ -232,6 +232,22 @@ body {
   max-width: 640px;
 }
 
+.stop-desc a {
+  color: var(--forest);
+  text-decoration: none;
+  border-bottom: 1px dashed rgba(26, 60, 42, 0.4);
+  font-weight: 600;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.stop-desc a:hover {
+  color: var(--fern);
+  border-bottom-color: var(--fern);
+}
+
+.stop.highlight .stop-desc a { color: var(--redwood); border-bottom-color: rgba(139, 58, 42, 0.4); }
+.stop.highlight .stop-desc a:hover { color: var(--sunset); border-bottom-color: var(--sunset); }
+
 .activities-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -776,7 +792,7 @@ body {
           <div class="stop-subtitle">2 nights &middot; Tue Jun 2 &ndash; Wed Jun 3 &middot; No car needed</div>
         </div>
       </div>
-      <p class="stop-desc">Get the city out of the way while everyone's fresh. Staying at <strong>Hotel Caza</strong> in Fisherman's Wharf (1300 Columbus Ave) &mdash; walkable to Pier 39, Ghirardelli Square, and the Alcatraz ferry. Use transit and rideshare for Chinatown and cable cars. Pick up the rental car at end of day 2.</p>
+      <p class="stop-desc">Get the city out of the way while everyone's fresh. Staying at <strong><a href="https://www.google.com/maps/search/Hotel+Caza+Fisherman+Wharf+San+Francisco" target="_blank" rel="noopener">Hotel Caza</a></strong> in Fisherman's Wharf (1300 Columbus Ave) &mdash; walkable to Pier 39, Ghirardelli Square, and the Alcatraz ferry. Use transit and rideshare for Chinatown and cable cars. Pick up the rental car at end of day 2.</p>
       <div class="activities-grid">
         <div class="activity-card" data-wiki="Alcatraz_Island">
           <img class="activity-img" alt="Alcatraz Island" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Alcatraz_Island_view_from_Golden_Gate_Bridge.JPG/400px-Alcatraz_Island_view_from_Golden_Gate_Bridge.JPG" onerror="this.style.display='none'">
@@ -844,7 +860,7 @@ body {
           <div class="stop-subtitle">1 night &middot; Thu Jun 4 &middot; Coastal charm</div>
         </div>
       </div>
-      <p class="stop-desc">A tiny village on the cliffs with no chain stores. Staying at <strong>Surf and Sand Lodge</strong> &mdash; ocean view room with two queen beds. Break up the drive north and enjoy a coastal sunset before the redwoods begin.</p>
+      <p class="stop-desc">A tiny village on the cliffs with no chain stores. Staying at <strong><a href="https://www.google.com/maps/search/Surf+and+Sand+Lodge+Fort+Bragg+CA" target="_blank" rel="noopener">Surf and Sand Lodge</a></strong> &mdash; ocean view room with two queen beds. Break up the drive north and enjoy a coastal sunset before the redwoods begin.</p>
       <div class="activities-grid">
         <div class="activity-card" data-wiki="Glass_Beach_(Fort_Bragg,_California)">
           <img class="activity-img" alt="Glass Beach" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Glass_Beach_Fort_Bragg_2.jpg/400px-Glass_Beach_Fort_Bragg_2.jpg" onerror="this.style.display='none'">
@@ -892,7 +908,7 @@ body {
           <div class="stop-badge">Core of the trip</div>
         </div>
       </div>
-      <p class="stop-desc">One Airbnb, five nights, and the tallest trees on Earth in every direction. Every day is a different adventure &mdash; all within 30&ndash;60 minutes of your base in Eureka. This is why you came.</p>
+      <p class="stop-desc">One <strong><a href="https://www.airbnb.com/rooms/1579783817405321605" target="_blank" rel="noopener">Airbnb</a></strong>, five nights, and the tallest trees on Earth in every direction. Every day is a different adventure &mdash; all within 30&ndash;60 minutes of your base in Eureka. This is why you came.</p>
       <div class="activities-grid">
         <div class="activity-card" data-wiki="Fern_Canyon">
           <img class="activity-img" alt="Fern Canyon" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Fern_Canyon_in_Redwood_National_Park,_California_with_tree_upside_down..jpg/400px-Fern_Canyon_in_Redwood_National_Park,_California_with_tree_upside_down..jpg" onerror="this.style.display='none'">
@@ -981,7 +997,7 @@ body {
           <div class="stop-subtitle">1 night &middot; Wed Jun 10 &middot; Transition stop</div>
         </div>
       </div>
-      <p class="stop-desc">A day of volcanoes, waterfalls, and glass bridges as you loop inland and head south toward wine country. Staying at <strong>Americana Modern Hotel</strong> in Redding (1241 Market St) &mdash; King Queen Queen Suite fits the whole crew. Big scenery with minimal effort.</p>
+      <p class="stop-desc">A day of volcanoes, waterfalls, and glass bridges as you loop inland and head south toward wine country. Staying at <strong><a href="https://www.google.com/maps/search/Americana+Modern+Hotel+Redding+CA" target="_blank" rel="noopener">Americana Modern Hotel</a></strong> in Redding (1241 Market St) &mdash; King Queen Queen Suite fits the whole crew. Big scenery with minimal effort.</p>
       <div class="activities-grid">
         <div class="activity-card" data-wiki="Mount_Shasta">
           <img class="activity-img" alt="Mount Shasta" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/MtShastaFromMtShastaCity.JPG/400px-MtShastaFromMtShastaCity.JPG" onerror="this.style.display='none'">
@@ -1028,7 +1044,7 @@ body {
           <div class="stop-subtitle">3 nights &middot; Thu Jun 11 &ndash; Sat Jun 13 &middot; Wind down</div>
         </div>
       </div>
-      <p class="stop-desc">The perfect decompression after a week in the woods. Staying at a <strong>Home in Healdsburg</strong> with a hot tub and vineyard views &mdash; the reward for all the driving. Float the river, eat ice cream in the plaza, and visit one last redwood grove before heading home.</p>
+      <p class="stop-desc">The perfect decompression after a week in the woods. Staying at a <strong><a href="https://www.airbnb.com/rooms/19220864" target="_blank" rel="noopener">Home in Healdsburg</a></strong> with a hot tub and vineyard views &mdash; the reward for all the driving. Float the river, eat ice cream in the plaza, and visit one last redwood grove before heading home.</p>
       <div class="activities-grid">
         <div class="activity-card" data-wiki="Russian_River_(California)">
           <img class="activity-img" alt="Russian River Tubing" loading="lazy" src="Russian%20River%20Tubes%20%26%20Kayaks.webp" onerror="this.style.display='none'">
