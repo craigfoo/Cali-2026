@@ -335,6 +335,92 @@ body {
 
 .stop-lodging.tbd .stop-lodging-name { color: var(--text-muted); font-style: italic; }
 
+.host-tips {
+  background: linear-gradient(135deg, #faf6ef 0%, #f5ede0 100%);
+  border: 1px solid rgba(139, 58, 42, 0.15);
+  border-radius: 14px;
+  padding: 1.75rem 1.75rem 1.25rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.host-tips::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; bottom: 0;
+  width: 4px;
+  background: var(--redwood);
+  border-radius: 14px 0 0 14px;
+}
+
+.host-tips-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(139, 58, 42, 0.1);
+}
+
+.host-tips-icon {
+  font-size: 1.6rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.host-tips-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--redwood);
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+
+.host-tips-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--forest);
+  line-height: 1.3;
+}
+
+.host-tip {
+  margin-bottom: 1.25rem;
+}
+
+.host-tip:last-of-type { margin-bottom: 0; }
+
+.host-tip h4 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--forest);
+  margin-bottom: 0.4rem;
+  line-height: 1.3;
+}
+
+.host-tip p {
+  font-size: 0.9rem;
+  color: var(--text);
+  line-height: 1.65;
+  margin-bottom: 0.5rem;
+}
+
+.host-tip p:last-child { margin-bottom: 0; }
+
+.host-tip strong { color: var(--redwood); font-weight: 600; }
+
+.host-tip-closer {
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(139, 58, 42, 0.1);
+  text-align: right;
+  font-style: italic;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
 .activities-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
@@ -1023,6 +1109,46 @@ body {
         <span class="stop-lodging-arrow">&rarr;</span>
       </a>
       <p class="stop-desc">One <strong><a href="https://www.airbnb.com/rooms/1579783817405321605" target="_blank" rel="noopener">Airbnb</a></strong>, five nights, and the tallest trees on Earth in every direction. Every day is a different adventure &mdash; all within 30&ndash;60 minutes of your base in Eureka. This is why you came.</p>
+
+      <aside class="host-tips">
+        <div class="host-tips-header">
+          <span class="host-tips-icon">💬</span>
+          <div>
+            <div class="host-tips-label">Tips from your Airbnb host</div>
+            <div class="host-tips-title">Insider picks for your redwood days</div>
+          </div>
+        </div>
+
+        <div class="host-tip">
+          <h4>Make a day of Trinidad heading north</h4>
+          <p>Don't miss this awesome beach town right on the 101. <strong>Luffenholtz Beach</strong> (via the scenic route) is a local treasure and was recently featured on the cover of Sunset magazine &mdash; the Trinidad coast will take your breath away.</p>
+          <p>Start the morning at the <strong>Beach Comber Cafe</strong> &mdash; wonderful breakfast, but bring your own mug (they don't sell coffee in to-go cups, though they'll lend you one). Then walk it off on the <strong>Trinidad Head trail</strong>: easy 1.6-mile round trip. Park at Trinidad State Beach and find the trailhead there.</p>
+        </div>
+
+        <div class="host-tip">
+          <h4>Fern Canyon &mdash; call ahead</h4>
+          <p>Famous for the fern-covered canyon walls, a creek running through it, and a beach right alongside. Sure to please. Expect a semi-bumpy dirt road in and an $8 entrance fee. The park has a reservation system now &mdash; call <strong>(707) 465-7354</strong> before you go.</p>
+        </div>
+
+        <div class="host-tip">
+          <h4>Add Trillium Falls &mdash; a guest favorite</h4>
+          <p>A lesser-known gem in the same vicinity as Fern Canyon. Short 2-mile round trip through giant redwoods, trillium blooms (in season), and a little waterfall at the end.</p>
+        </div>
+
+        <div class="host-tip">
+          <h4>Prairie Creek: start at the ranger station</h4>
+          <p>Take the exit for Newton B. Drury Scenic Byway / Prairie Creek State Park and park at the ranger station. Pick up a map and hit the trails behind it &mdash; the host's favorite loops are the <strong>James Irvine loop</strong> and the <strong>Miner's Ridge loop</strong>. Make them as short or long as you want; giant redwoods either way.</p>
+          <p>On Newton B. Drury Parkway, watch for a stop on the left marked <strong>"the Corkscrew Tree"</strong> &mdash; a short hike to one of the host's favorite redwoods. And don't skip <strong>Lady Bird Johnson Grove</strong> while you're in the area.</p>
+        </div>
+
+        <div class="host-tip">
+          <h4>Howland Hill Road into Jedediah Smith</h4>
+          <p>On your way to Crescent City, plug <strong>"Howland Hill"</strong> into GPS. At the road, take a right and follow it up the hill until you hit a dirt road &mdash; about 7 miles off the 101. Plenty of pullouts for photos and hikes. One of the host's favorite roads, and one of the best places to see giant redwoods.</p>
+        </div>
+
+        <div class="host-tip-closer">&mdash; Enjoy! 🌲</div>
+      </aside>
+
       <div class="activities-grid">
         <div class="activity-card" data-wiki="Fern_Canyon">
           <img class="activity-img" alt="Fern Canyon" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Fern_Canyon_in_Redwood_National_Park,_California_with_tree_upside_down..jpg/400px-Fern_Canyon_in_Redwood_National_Park,_California_with_tree_upside_down..jpg" onerror="this.style.display='none'">
