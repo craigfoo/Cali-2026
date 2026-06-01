@@ -911,6 +911,127 @@ body {
   .route-map { padding: 3rem 1.25rem 2rem; }
 }
 
+/* TRIP CALENDAR */
+.trip-calendar {
+  background: var(--mist);
+  padding: 4rem 2rem 3rem;
+  text-align: center;
+}
+
+.trip-calendar-inner {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.trip-calendar h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2rem;
+  color: var(--forest);
+  margin-bottom: 0.5rem;
+}
+
+.trip-calendar > .trip-calendar-inner > p {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+}
+
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 6px;
+}
+
+.cal-dow {
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 600;
+  padding-bottom: 0.4rem;
+}
+
+.cal-day {
+  position: relative;
+  border-radius: 10px;
+  min-height: 88px;
+  padding: 0.5rem 0.4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  color: #fff;
+  overflow: hidden;
+}
+
+.cal-day.empty {
+  background: transparent;
+}
+
+.cal-day .cal-date {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.cal-day .cal-loc {
+  font-size: 0.6rem;
+  line-height: 1.25;
+  margin-top: 0.35rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+}
+
+.cal-day .cal-tag {
+  font-size: 0.5rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-top: auto;
+  padding-top: 0.3rem;
+  opacity: 0.85;
+}
+
+.cal-sf { background: var(--forest); }
+.cal-fortbragg { background: var(--sky); }
+.cal-eureka { background: var(--fern); }
+.cal-redding { background: var(--sunset); }
+.cal-healdsburg { background: var(--redwood); }
+.cal-home { background: var(--bark); }
+
+.cal-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem 1.2rem;
+  justify-content: center;
+  margin-top: 1.75rem;
+}
+
+.cal-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+}
+
+.cal-legend-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+  .trip-calendar { padding: 3rem 1rem 2rem; }
+  .cal-grid { gap: 3px; }
+  .cal-day { min-height: 64px; padding: 0.35rem 0.2rem; }
+  .cal-day .cal-date { font-size: 0.95rem; }
+  .cal-day .cal-loc { font-size: 0.5rem; }
+  .cal-day .cal-tag { display: none; }
+  .cal-dow { font-size: 0.55rem; }
+}
+
 /* ANIMATIONS */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(20px); }
@@ -961,6 +1082,48 @@ body {
     <div class="hero-countdown" id="countdown"></div>
   </div>
   <div class="hero-scroll">Scroll to explore</div>
+</section>
+
+<section class="trip-calendar">
+  <div class="trip-calendar-inner">
+    <h2>The Itinerary</h2>
+    <p>Two weeks, six bases &middot; June 2&ndash;15, 2026</p>
+    <div class="cal-grid">
+      <div class="cal-dow">Mon</div>
+      <div class="cal-dow">Tue</div>
+      <div class="cal-dow">Wed</div>
+      <div class="cal-dow">Thu</div>
+      <div class="cal-dow">Fri</div>
+      <div class="cal-dow">Sat</div>
+      <div class="cal-dow">Sun</div>
+
+      <div class="cal-day empty"></div>
+      <div class="cal-day cal-sf"><div class="cal-date">2</div><div class="cal-loc">San Francisco</div><div class="cal-tag">Arrive</div></div>
+      <div class="cal-day cal-sf"><div class="cal-date">3</div><div class="cal-loc">San Francisco</div></div>
+      <div class="cal-day cal-fortbragg"><div class="cal-date">4</div><div class="cal-loc">Fort Bragg</div></div>
+      <div class="cal-day cal-eureka"><div class="cal-date">5</div><div class="cal-loc">Eureka</div><div class="cal-tag">Redwoods</div></div>
+      <div class="cal-day cal-eureka"><div class="cal-date">6</div><div class="cal-loc">Eureka</div></div>
+      <div class="cal-day cal-eureka"><div class="cal-date">7</div><div class="cal-loc">Eureka</div></div>
+
+      <div class="cal-day cal-eureka"><div class="cal-date">8</div><div class="cal-loc">Eureka</div></div>
+      <div class="cal-day cal-eureka"><div class="cal-date">9</div><div class="cal-loc">Eureka</div></div>
+      <div class="cal-day cal-redding"><div class="cal-date">10</div><div class="cal-loc">Redding</div><div class="cal-tag">Mt. Shasta</div></div>
+      <div class="cal-day cal-healdsburg"><div class="cal-date">11</div><div class="cal-loc">Healdsburg</div></div>
+      <div class="cal-day cal-healdsburg"><div class="cal-date">12</div><div class="cal-loc">Healdsburg</div></div>
+      <div class="cal-day cal-healdsburg"><div class="cal-date">13</div><div class="cal-loc">Healdsburg</div></div>
+      <div class="cal-day cal-sf"><div class="cal-date">14</div><div class="cal-loc">Mill Valley</div><div class="cal-tag">Last night</div></div>
+
+      <div class="cal-day cal-home"><div class="cal-date">15</div><div class="cal-loc">Fly home</div><div class="cal-tag">11:37 AM</div></div>
+    </div>
+    <div class="cal-legend">
+      <div class="cal-legend-item"><span class="cal-legend-dot cal-sf"></span>San Francisco</div>
+      <div class="cal-legend-item"><span class="cal-legend-dot cal-fortbragg"></span>Fort Bragg</div>
+      <div class="cal-legend-item"><span class="cal-legend-dot cal-eureka"></span>Eureka / Redwoods</div>
+      <div class="cal-legend-item"><span class="cal-legend-dot cal-redding"></span>Redding</div>
+      <div class="cal-legend-item"><span class="cal-legend-dot cal-healdsburg"></span>Healdsburg</div>
+      <div class="cal-legend-item"><span class="cal-legend-dot cal-home"></span>Fly home</div>
+    </div>
+  </div>
 </section>
 
 <section class="route-map">
