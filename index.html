@@ -962,6 +962,14 @@ body {
   justify-content: flex-start;
   color: #fff;
   overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  text-decoration: none;
+}
+
+.cal-day:hover:not(.empty) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
 
 .cal-day.empty {
@@ -1106,22 +1114,22 @@ body {
 
       <div class="cal-day empty"></div>
       <div class="cal-day empty"></div>
-      <div class="cal-day cal-sf"><div class="cal-date">2</div><div class="cal-loc">San Francisco</div><div class="cal-tag">&#9992; Lands 1:13 PM</div></div>
-      <div class="cal-day cal-sf"><div class="cal-date">3</div><div class="cal-loc">San Francisco</div></div>
-      <div class="cal-day cal-fortbragg"><div class="cal-date">4</div><div class="cal-loc">Fort Bragg</div></div>
-      <div class="cal-day cal-eureka"><div class="cal-date">5</div><div class="cal-loc">Eureka</div><div class="cal-tag">Redwoods</div></div>
-      <div class="cal-day cal-eureka"><div class="cal-date">6</div><div class="cal-loc">Eureka</div></div>
+      <a class="cal-day cal-sf" href="#stop-sf"><div class="cal-date">2</div><div class="cal-loc">San Francisco</div><div class="cal-tag">&#9992; Lands 1:13 PM</div></a>
+      <a class="cal-day cal-sf" href="#stop-sf"><div class="cal-date">3</div><div class="cal-loc">San Francisco</div></a>
+      <a class="cal-day cal-fortbragg" href="#stop-fortbragg"><div class="cal-date">4</div><div class="cal-loc">Fort Bragg</div></a>
+      <a class="cal-day cal-eureka" href="#stop-eureka"><div class="cal-date">5</div><div class="cal-loc">Eureka</div><div class="cal-tag">Redwoods</div></a>
+      <a class="cal-day cal-eureka" href="#stop-eureka"><div class="cal-date">6</div><div class="cal-loc">Eureka</div></a>
 
-      <div class="cal-day cal-eureka"><div class="cal-date">7</div><div class="cal-loc">Eureka</div></div>
-      <div class="cal-day cal-eureka"><div class="cal-date">8</div><div class="cal-loc">Eureka</div></div>
-      <div class="cal-day cal-eureka"><div class="cal-date">9</div><div class="cal-loc">Eureka</div></div>
-      <div class="cal-day cal-redding"><div class="cal-date">10</div><div class="cal-loc">Redding</div><div class="cal-tag">Mt. Shasta</div></div>
-      <div class="cal-day cal-healdsburg"><div class="cal-date">11</div><div class="cal-loc">Healdsburg</div></div>
-      <div class="cal-day cal-healdsburg"><div class="cal-date">12</div><div class="cal-loc">Healdsburg</div></div>
-      <div class="cal-day cal-healdsburg"><div class="cal-date">13</div><div class="cal-loc">Healdsburg</div></div>
+      <a class="cal-day cal-eureka" href="#stop-eureka"><div class="cal-date">7</div><div class="cal-loc">Eureka</div></a>
+      <a class="cal-day cal-eureka" href="#stop-eureka"><div class="cal-date">8</div><div class="cal-loc">Eureka</div></a>
+      <a class="cal-day cal-eureka" href="#stop-eureka"><div class="cal-date">9</div><div class="cal-loc">Eureka</div></a>
+      <a class="cal-day cal-redding" href="#stop-redding"><div class="cal-date">10</div><div class="cal-loc">Redding</div><div class="cal-tag">Mt. Shasta</div></a>
+      <a class="cal-day cal-healdsburg" href="#stop-healdsburg"><div class="cal-date">11</div><div class="cal-loc">Healdsburg</div></a>
+      <a class="cal-day cal-healdsburg" href="#stop-healdsburg"><div class="cal-date">12</div><div class="cal-loc">Healdsburg</div></a>
+      <a class="cal-day cal-healdsburg" href="#stop-healdsburg"><div class="cal-date">13</div><div class="cal-loc">Healdsburg</div></a>
 
-      <div class="cal-day cal-sf"><div class="cal-date">14</div><div class="cal-loc">Mill Valley</div><div class="cal-tag">Last night</div></div>
-      <div class="cal-day cal-home"><div class="cal-date">15</div><div class="cal-loc">Fly home</div><div class="cal-tag">&#9992; Dep 11:37 AM</div></div>
+      <a class="cal-day cal-sf" href="#stop-millvalley"><div class="cal-date">14</div><div class="cal-loc">Mill Valley</div><div class="cal-tag">Last night</div></a>
+      <a class="cal-day cal-home" href="#stop-flyhome"><div class="cal-date">15</div><div class="cal-loc">Fly home</div><div class="cal-tag">&#9992; Dep 11:37 AM</div></a>
     </div>
     <div class="cal-legend">
       <div class="cal-legend-item"><span class="cal-legend-dot cal-sf"></span>San Francisco</div>
@@ -1149,7 +1157,7 @@ body {
 <div class="stops">
 
   <!-- STOP 1: SAN FRANCISCO -->
-  <section class="stop">
+  <section class="stop" id="stop-sf">
     <div class="stop-inner">
       <div class="stop-header">
         <div class="stop-number">1</div>
@@ -1226,7 +1234,7 @@ body {
   </div>
 
   <!-- STOP 2: FORT BRAGG -->
-  <section class="stop">
+  <section class="stop" id="stop-fortbragg">
     <div class="stop-inner">
       <div class="stop-header">
         <div class="stop-number">2</div>
@@ -1282,7 +1290,7 @@ body {
   </div>
 
   <!-- STOP 3: REDWOODS -->
-  <section class="stop highlight">
+  <section class="stop highlight" id="stop-eureka">
     <div class="stop-inner">
       <div class="stop-header">
         <div class="stop-number">3</div>
@@ -1421,7 +1429,7 @@ body {
   </div>
 
   <!-- STOP 4: SHASTA -->
-  <section class="stop">
+  <section class="stop" id="stop-redding">
     <div class="stop-inner">
       <div class="stop-header">
         <div class="stop-number">4</div>
@@ -1477,7 +1485,7 @@ body {
   </div>
 
   <!-- STOP 5: RUSSIAN RIVER -->
-  <section class="stop">
+  <section class="stop" id="stop-healdsburg">
     <div class="stop-inner">
       <div class="stop-header">
         <div class="stop-number">5</div>
@@ -1533,7 +1541,7 @@ body {
   </div>
 
   <!-- STOP 6: MILL VALLEY -->
-  <section class="stop">
+  <section class="stop" id="stop-millvalley">
     <div class="stop-inner">
       <div class="stop-header">
         <div class="stop-number">6</div>
@@ -1556,7 +1564,7 @@ body {
   </section>
 
   <!-- FLY HOME -->
-  <div class="drive-connector">
+  <div class="drive-connector" id="stop-flyhome">
     <div>
       <div class="drive-time">Mon Jun 15</div>
       <div class="drive-route">Fly home</div>
